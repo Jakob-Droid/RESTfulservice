@@ -83,6 +83,7 @@ namespace RESTful_service
             });
 
             app.UseRouting();
+            app.UseCors("AllowAnyOrigin");
 
             app.UseAuthorization();
 
@@ -90,7 +91,6 @@ namespace RESTful_service
             {
                 endpoints.MapControllers();
             });
-            app.UseCors("AllowAnyOrigin");
 
 
         }
