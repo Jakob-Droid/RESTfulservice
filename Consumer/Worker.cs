@@ -12,7 +12,7 @@ namespace Consumer
 {
     public class  Worker
     {
-        public async void start()
+        public async void Start()
         {
             Console.WriteLine(string.Join("\n", GetALlItemsAsync().Result));
 

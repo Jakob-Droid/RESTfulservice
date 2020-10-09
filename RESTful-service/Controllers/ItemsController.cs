@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ModelLib.Model;
 
@@ -33,7 +34,6 @@ namespace RESTful_service.Controllers
         // GET api/<ItemsController>/5
         [HttpGet]
         [Route("{id}")]
-
         public Item Get(int id)
         {
             return items.Find(i => i.Id == id);
@@ -41,6 +41,7 @@ namespace RESTful_service.Controllers
 
         // POST api/<ItemsController>
         [HttpPost]
+        [DisableCors]
         public void Post([FromBody] Item value)
         {
             items.Add(value);
@@ -49,6 +50,7 @@ namespace RESTful_service.Controllers
         // PUT api/<ItemsController>/5
         [HttpPut]
         [Route("{id}")]
+        [EnableCors("AllowPostGet")]
         public void Put(int id, [FromBody] Item value)
         {
             Item item = Get(id);

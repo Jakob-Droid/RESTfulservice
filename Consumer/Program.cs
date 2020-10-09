@@ -13,7 +13,7 @@ namespace Consumer
 
             worker.PostItemAsync(new Item(2, "Bread", "Middle", 21));
 
-            worker.start();
+            worker.Start();
             
             Console.ReadLine();
         }
