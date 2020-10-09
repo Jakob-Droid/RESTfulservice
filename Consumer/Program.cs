@@ -11,9 +11,9 @@ namespace Consumer
 
             Worker worker = new Worker();
 
-            worker.PostItemAsync(new Item(2, "Bread", "Middle", 21));
-
             worker.Start();
+            
+
             
             Console.ReadLine();
         }

@@ -53,7 +53,7 @@ namespace RESTful_service
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAnyOrigin", builder => builder.AllowAnyOrigin());
-                options.AddPolicy("AllowMyLocalOrigin", builder =>builder.WithOrigins("http://localhost:50601"));
+                options.AddPolicy("AllowMyLocalOrigin", builder =>builder.WithOrigins("http://localhost:5000"));
                 options.AddPolicy("AllowGetPost", builder=>builder.AllowAnyOrigin().WithMethods("GET","POST"));
             });
 
@@ -84,6 +84,7 @@ namespace RESTful_service
 
             app.UseRouting();
             app.UseCors("AllowMyLocalOrigin");
+            //Pas på med mere end én UseCors, da de kan override hinanden, som set her!
             //app.UseCors("AllowGetPost");
             
 

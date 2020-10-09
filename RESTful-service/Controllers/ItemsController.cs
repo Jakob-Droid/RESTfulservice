@@ -56,26 +56,10 @@ namespace RESTful_service.Controllers
             Item item = Get(id);
             if (item != null)
             {
-
-                IEnumerable<Item> checkList = Get();
-                if (!checkList.Any(x => x.Id == item.Id))
-                {
-                    item.Id = value.Id;
-                    item.Name = value.Name;
-                    item.Quality = value.Quality;
-                    item.Quantity = value.Quantity;
-                }
-            }
-
-            if (item == null)
-            {
-                items.Add(new Item()
-                {
-                    Id = value.Id,
-                    Name = value.Name,
-                    Quality = value.Quality,
-                    Quantity = value.Quantity
-            });
+                item.Id = value.Id;
+                item.Name = value.Name;
+                item.Quality = value.Quality;
+                item.Quantity = value.Quantity;
             }
         }
 
