@@ -84,7 +84,7 @@ namespace RESTful_service
 
             app.UseRouting();
             app.UseCors("AllowMyLocalOrigin");
-            app.UseCors("AllowGetPost");
+            //app.UseCors("AllowGetPost");
             
 
             app.UseAuthorization();
