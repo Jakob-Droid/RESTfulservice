@@ -83,7 +83,7 @@ namespace RESTful_service
             });
 
             app.UseRouting();
-            app.UseCors("AllowAnyOrigin");
+            app.UseCors("AllowLocalOrigin");
 
             app.UseAuthorization();
 
